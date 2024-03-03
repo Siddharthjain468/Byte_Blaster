@@ -7,7 +7,7 @@ WIDTH, HEIGHT = 1000, 800
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("test_game")
 
-BG = pygame.transform.scale(pygame.image.load("C:/Users/lappie/OneDrive/Documents/python_game/background.jpg"), (WIDTH,HEIGHT))
+BG = pygame.transform.scale(pygame.image.load("bg.jpg"), (WIDTH,HEIGHT))
 PLAYER_WIDTH = 40
 PLAYER_HEIGHT = 60
 PLAYER_VEL = 5
