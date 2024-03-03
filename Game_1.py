@@ -74,7 +74,23 @@ def main():
             WIN.blit(lost_text, (WIDTH/2-lost_text.get_width()/2, HEIGHT/2 - lost_text.get_height()/2))
             pygame.display.update()
             pygame.time.delay(1000)
-            break
+          
+            WIN.fill(pygame.Color("black"))
+            continue_or_not = FONT.render("1.Continue \n 2.Exit", 1, "white")
+            WIN.blit(continue_or_not, (WIDTH/2-continue_or_not.get_width()/2, HEIGHT/2 - continue_or_not.get_height()/2))
+            pygame.display.update()
+            # pygame.time.delay(4000)
+
+            pygame.event.clear()
+            while True:
+                event = pygame.event.wait()
+                if event.type == pygame.K_1:
+                    main()
+                    continue
+                if event.type == pygame.K_2:
+                    print("in else if")
+                    pygame.quit()
+                    break
 
         draw(player, elapsed_time, stars)
     pygame.quit() 
