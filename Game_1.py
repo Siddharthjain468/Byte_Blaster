@@ -50,8 +50,7 @@ def main():
     stars = []
 
     while run:
-        clock.tick(60)
-        star_count+=2
+        star_count += clock.tick(60)
         elapsed_time = time.time() - start_time
 
         if star_count > star_add_increment:
@@ -98,21 +97,21 @@ def main():
             while True:
                 # print("entered while")
                 event = pygame.event.wait()
-                # if event.type == pygame.KEYDOWN:
-                if event.key== pygame.K_1 or event.key == pygame.K_SPACE:
-                    hit = False
-                    elapsed_time = 0
-                    start_time = time.time()
-                    PLAYER_VEL = 5
-                    STAR_VEL = 3
-                    stars = []
-                    star_add_increment = 2000
-                    star_count = 0
-                    break
-                if event.key == pygame.K_2 or event.key == pygame.K_ESCAPE:
-                    pygame.quit()
-                    sys.exit()
-                    break
+                if event.type == pygame.KEYDOWN:
+                    if event.key== pygame.K_1 or event.key == pygame.K_SPACE:
+                        hit = False
+                        elapsed_time = 0
+                        start_time = time.time()
+                        PLAYER_VEL = 5
+                        STAR_VEL = 3
+                        stars = []
+                        star_add_increment = 2000
+                        star_count = 0
+                        break
+                    if event.key == pygame.K_2 or event.key == pygame.K_ESCAPE:
+                        pygame.quit()
+                        sys.exit()
+                        break
 
 # pygame.event.clear()
 # while True:
